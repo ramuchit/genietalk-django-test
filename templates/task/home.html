@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Gennie Task</title>
+    <script src="{% static 'jquery.3.2.1.min.js' %}"></script>
+    <script src="{% static 'jquery-ui.min.js' %}"></script>
+    <script src="{% static 'custom.js' %}"></script>
+</head>
+<body>
+    <div class="conatiner">
+        <fieldset>
+            <legend> Date Converter</legend>
+            <div class="row">
+                <form action="/" method="post">
+                    <label for="day">Enter Day Name: </label>
+                    <input id="day" type="text" name="day" value="Monday">
+                    <input type="button" value="Convert" id="convertbtn">
+                </form>
+                <br/>
+                <div id="converted-output"></div>
+            </div>
+        </fieldset>
+
+         <fieldset>
+             <legend> Real Time Voice</legend>
+            <div class="row">
+                 <small>Only for 10s live audio</small>
+                <button id="startbtn" csrf_token="{{ csrf_token }}">Start</button>
+
+                <a href="#" target="_blank" id="audio_link" style="display:none">Audio converted text</a>
+            </div>
+        </fieldset>
+
+         <div>
+             <h2> Autocomplete</h2>
+            <div class="row">
+
+                    <label for="day">Search: </label>
+                    <input id="autocomplete" type="text" name="autocomplete" placeholder="book, math">
+                    <p id="selected"></p>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+</body>
+</html>
